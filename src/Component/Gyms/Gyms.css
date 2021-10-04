@@ -1,0 +1,74 @@
+.cards1 img {
+  width: 30%;
+  height: 30%;
+  margin-left: 30%;
+}
+.cards2 img {
+  width: 45%;
+  height: 45%;
+  margin-left: 20%;
+}
+.cards3 img {
+  width: 65%;
+  height: 65%;
+  margin-left: 20%;
+}
+.cards4 img {
+  width: 40%;
+  height: 40%;
+  margin-left: 20%;
+}
+.cards5 img {
+  width: 60%;
+  height: 60%;
+  margin-left: 20%;
+}
+.cards6 img {
+  width: 50%;
+  height: 30%;
+  margin-left: 20%;
+}
+.cards7 img {
+  width: 60%;
+  height: 60%;
+  margin-left: 20%;
+}
+
+.cards9 img {
+  width: 70%;
+  height: 70%;
+  margin-left: 20%;
+}
+.cards10 img {
+  width: 40%;
+  height: 40%;
+  margin-left: 30%;
+}
+.cards11 img {
+  width: 50%;
+  height: 50%;
+  margin-left: 30%;
+}
+.cards12 img {
+  width: 60%;
+  height: 60%;
+  margin-left: 30%;
+}
+.cards13 img {
+  width: 60%;
+  height: 60%;
+  margin-left: 30%;
+}
+.box {
+  border-radius: 2px solid red;
+}
+.head {
+  margin-top: 100px;
+}
+/* .cards {
+  border-radius: 3px solid;
+  box-shadow: 5px 5px 5px;
+} */
+.t1{
+margin-top: 16px;
+}

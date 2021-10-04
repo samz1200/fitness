@@ -1,0 +1,31 @@
+.hero-section {
+  background: url("../../../images/B1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.hero-right.text-center h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: blue;
+  font-weight: 700;
+  display: block;
+}
+.hero-right.text-center p {
+  color: yellow;
+  font-size: 25px;
+  font-weight: bold;
+}
+.hero-right.text-center a {
+  text-decoration: none;
+  background: #e32a2a;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 600;
+}

@@ -1,0 +1,44 @@
+.profileBoard {
+    background-image: url("../../../images/background.jpg");
+    height: 14rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0 0;
+    /* opacity: 0.8; */
+}
+.profileImageDiv {
+    display: flex;
+    align-items: center;
+    padding: 5.5rem 2rem;
+}
+.profileImage {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+.profileNavBar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    box-shadow: rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 16px 32px -4px;
+    border-radius: 0 0 10px 10px;
+}
+.profileTabs {
+    margin-left: 3rem;
+    font-weight: 450;
+    cursor: pointer;
+    color: rgb(99, 115, 129);
+    padding-bottom: 0.2rem;
+}
+
+
+@media (max-width: 709px){
+    .profileImageDiv{
+        padding: 0;
+        display: block;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+}

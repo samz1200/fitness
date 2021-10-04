@@ -1,0 +1,57 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+/* .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+    padding: 1rem 0;
+} */
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content {
+    color: #05ce78;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper .pro-icon {
+    color: #05ce78;
+}
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+}
+.crossIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.pro-sidebar {
+    height: auto !important;
+    border-right: 1px solid lightgray;
+}
+.pro-sidebar > .pro-sidebar-inner {
+    background-color: white;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-icon-wrapper .pro-icon {
+    background-color: white;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover .pro-icon-wrapper .pro-icon {
+    animation: none;
+}
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.sideBarComponentsDiv {
+    width: 100%;
+    /* margin: 0 auto; */
+}
+.sideBarDataDiv {
+    padding: 2rem 3rem;
+}
+.topBarDiv {
+    position: sticky;
+    top: 0;
+    background-color: whitesmoke;
+    height: 4.4rem;
+    padding: 1rem 2rem;
+}

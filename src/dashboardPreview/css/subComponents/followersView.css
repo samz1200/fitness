@@ -1,0 +1,49 @@
+.followersDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+.followersSubDiv {
+    display: flex;
+    flex-grow: 1;
+    width: 31%;
+    padding: 2rem;
+    box-shadow: rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 16px 32px -4px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+    /* height: 100px; */
+}
+.followersSubDivImage{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.followersSubDivBtn{
+    border: none;
+    background: none;
+    font-weight: bold;
+    border-radius: 10px;
+    color: rgb(5, 206, 120);
+    padding: 0.2rem 1.2rem;
+}
+.followersSubDivBtn:hover{
+    background-color: #EBF8F2 !important;
+}
+.followSubDivBtn{
+    background: none;
+    padding: 0.2rem 1.2rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.followSubDivBtn:hover{
+    background-color: #F6F7F8 !important;
+}
+
+@media (max-width: 992px){
+    .followersSubDiv{
+        display: block;
+        text-align: center;
+    }
+}

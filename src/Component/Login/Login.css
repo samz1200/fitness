@@ -1,0 +1,22 @@
+.input  {
+  width: 60%;
+  padding: 8px 13px;
+  border: 0;
+  border-radius: 13px;
+}
+
+.signup{
+text-decoration: none;
+text-color:black;
+}
+/* .bt1{
+  padding: 8px 40px 10px 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+
+} */
+@media only screen and (max-width: 600px) {
+  .input {
+    width: 100%;
+  }
+}

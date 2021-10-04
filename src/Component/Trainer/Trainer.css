@@ -1,0 +1,61 @@
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+.card1 {
+  border-radius: 10px 15px;
+  box-shadow: 10px 5px 5px;
+  margin: 10px;
+}
+
+.card1 a {
+  display: block;
+  text-decoration: none;
+  text-decoration: none;
+  background-color: #008dc2;
+  color: #fff;
+  height: 250px;
+}
+.card1 a:hover{
+  
+    color: white;
+    
+}
+/* Payment card section */
+
+.signup2 {
+  text-decoration: none;
+  background: #e32a2a;
+  color: #fff !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  font-size: 15px;
+  border-radius: 12px;
+  position: absolute;
+  /* margin-left:37%;
+      margin-top: 210px;
+      width: 150px; */
+  /* margin-right: 25px; */
+  margin-top: -60px;
+  width: 150px;
+  margin-left: 8%;
+}
+.signup1 {
+  text-decoration: none;
+  background: #e32a2a;
+  color: #fff !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  font-size: 15px;
+  border-radius: 12px;
+  position: absolute;
+  /* margin-left:37%;
+      margin-top: 210px;
+      width: 150px; */
+  /* margin-right: 25px; */
+  margin-top: -60px;
+  width: 150%;
+  margin-left: 8%;
+}
