@@ -21,8 +21,18 @@ const Ctarea = () => {
             </div>
             <div className="service-area row">
               <div className="section-title text-center txt">
-                <h4>No Tokens | No Credits | No Limitations on Attendance</h4>
+                <h4>No Tokens |</h4>
+                <h4>No Credits |</h4>
+                <h4>No Limitations on Attendance</h4>
+                {/* <h4>No Tokens | No Credits | No Limitations on Attendance</h4> */}
                 <h4>Your Money, You Get To Choose</h4>
+              </div>
+              <div className="section-title text-center txt mt-5">
+                <h4>“Business Bio”</h4>
+                <h5 style={{color: "white"}}>
+                  "Are you getting the results that you want from your medical care provider, looking to prevent chronic disease, or want to address the root causes of your health?
+                  Great Health and Wellness is here to empower you to take control of your health through lifestyle medicine and a health-based mindset. An investment in your health always pays dividends!"
+                </h5>
               </div>
               {/* single service wrapper */}
               <div className="col-md-4 col-lg-4 col-xl-4 col-12 col-xs-12 col-sm-6 ">

@@ -16,9 +16,9 @@ const Payment = () => {
                   <sup>$</sup>150<span> / month</span>
                 </div>
                 <h3 style={{ color: "#ff901c" }}>
-                  Select Up to 4 National Gym or Studio Memberships
+                  Select Up to 4 <br /> National Gyms or Studio Memberships <br />(one-time fee of $25 each time you switch Gyms or Studios)
                 </h3>
-                <div className="container">
+                <div className="container" style={{ textAlign: "left" }}>
                   <div class="row text">
                     <div class="col">Gold’s Gym</div>
                     <div class="col">24 Hour Fitness</div>
@@ -61,10 +61,9 @@ const Payment = () => {
                   <sup>$</sup>500<span> / month</span>
                 </div>
                 <h3 style={{ color: "#ff901c" }}>
-                  Select as many National Gym or Studio Memberships that you
-                  desire
+                  Select Up to 10<br /> National Gyms or Studio Memberships<br />(one-time fee of $25 each time you switch Gyms or Studios)
                 </h3>
-                <div className="container">
+                <div className="container" style={{ textAlign: "left" }}>
                   <div class="row  text">
                     <div class="col">Gold’s Gym</div>
                     <div class="col">24 Hour Fitness</div>

@@ -36,20 +36,20 @@ const Gyms = () => {
     <div>
       <Header></Header>
       <div className="gym">
-        <div className="">
-          <div className="row">
+        <div className="rowFirst">
+          {/* <div className=""> */}
             {/* card 1 */}
             {
               gyms?.map(item => (
 
                 <div className="col-md-6 col-sm-12 col-12 ">
                   <div className="cards cards1 box">
-                    <img class="card-img-top" src={item.gymImg} alt="Card image cap" />
-                    <div class="card-body">
-                      <h5 class="card-title" style={style1}>
+                    <img className="card-img-top" src={item.gymImg} alt="Card image cap" />
+                    <div className="card-body">
+                      <h5 className="card-title" style={style1}>
                         {item.gymName}
                       </h5>
-                      <p class="card-text" style={{ textAlign: "center" }}>
+                      <p className="card-text" style={{ textAlign: "center" }}>
                         {" "}
                         <span style={{ color: "blue" }}>{item.gymAddress}</span>{" "}
                         <br />{" "}
@@ -66,12 +66,12 @@ const Gyms = () => {
             {/* card 2 */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards2">
-                <img class="card-img-top" src={pic2} alt="Card image cap" />
-                <div class="card-body mt-3">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic2} alt="Card image cap" />
+                <div className="card-body mt-3">
+                  <h5 className="card-title" style={style1}>
                     Crunch Fitness{" "}
                   </h5>
-                  <p class="card-text t1" style={{ textAlign: "center" }}>
+                  <p className="card-text t1" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Child Care, Guest Privileges,{" "}
@@ -93,12 +93,12 @@ const Gyms = () => {
             {/* card 3  */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards3">
-                <img class="card-img-top" src={pic3} alt="Card image cap" />
-                <div class="card-body mt-3">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic3} alt="Card image cap" />
+                <div className="card-body mt-3">
+                  <h5 className="card-title" style={style1}>
                     Fitness Connection{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Child Care, Separated Saunas,{" "}
@@ -120,12 +120,12 @@ const Gyms = () => {
             {/* card 4  */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards4">
-                <img class="card-img-top" src={pic4} alt="Card image cap" />
-                <div class="card-body mb-5">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic4} alt="Card image cap" />
+                <div className="card-body mb-5">
+                  <h5 className="card-title" style={style1}>
                     Massage Envy{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Free Massage or Facial{" "}
@@ -137,12 +137,12 @@ const Gyms = () => {
             {/* card 5 */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards5">
-                <img class="card-img-top" src={pic5} alt="Card image cap" />
-                <div class="card-body mt-3">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic5} alt="Card image cap" />
+                <div className="card-body mt-3">
+                  <h5 className="card-title" style={style1}>
                     Physical Therapy{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Free Physical Therapy Consultation,{" "}
@@ -161,12 +161,12 @@ const Gyms = () => {
 
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards6">
-                <img class="card-img-top" src={pic6} alt="Card image cap" />
-                <div class="card-body mt-3">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic6} alt="Card image cap" />
+                <div className="card-body mt-3">
+                  <h5 className="card-title" style={style1}>
                     Planet Fitness{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Unlimited Guest Privileges,{" "}
@@ -188,12 +188,12 @@ const Gyms = () => {
             {/* card 7 */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards7">
-                <img class="card-img-top" src={pic7} alt="Card image cap" />
-                <div class="card-body">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={pic7} alt="Card image cap" />
+                <div className="card-body">
+                  <h5 className="card-title" style={style1}>
                     24 Hour Fitness{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Group Classes,{" "}
@@ -216,17 +216,17 @@ const Gyms = () => {
             {/* card 8  */}
 
             <div className="col-md-6 col-sm-12 col-12">
-              <div className="cards cards7 mt-5">
+              <div className="cards cards7  ">
                 <img
-                  class="card-img-top mt-5"
+                  className="card-img-top  "
                   src={pic8}
                   alt="Card image cap"
                 />
-                <div class="card-body mt-5">
-                  <h5 class="card-title mt-3" style={style1}>
+                <div className="card-body  ">
+                  <h5 className="card-title mt-3" style={style1}>
                     Snap Fitness{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Open 24 hours a Day{" "}
@@ -242,17 +242,17 @@ const Gyms = () => {
             </div>
             {/* card 9 */}
             <div className="col-md-6 col-sm-12 col-12">
-              <div className="cards cards9 mt-5">
+              <div className="cards cards9  ">
                 <img
-                  class="card-img-top mt-5"
+                  className="card-img-top  "
                   src={pic9}
                   alt="Card image cap"
                 />
-                <div class="card-body ">
-                  <h5 class="card-title " style={style1}>
+                <div className="card-body ">
+                  <h5 className="card-title " style={style1}>
                     Glo{" "}
                   </h5>
-                  <p class="card-text mt-5" style={{ textAlign: "center" }}>
+                  <p className="card-text  " style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Virtual Wellness Platform{" "}
@@ -275,13 +275,13 @@ const Gyms = () => {
             {/* card 10 */}
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards10 ">
-                <img class="card-img-top " src={pic10} alt="Card image cap" />
-                <div class="card-body ">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top " src={pic10} alt="Card image cap" />
+                <div className="card-body ">
+                  <h5 className="card-title" style={style1}>
                     Academy of <br />
                     Self Defense{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Virtual Self Defense Training{" "}
@@ -304,14 +304,14 @@ const Gyms = () => {
 
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards11 head ">
-                <img class="card-img-top " src={img1} alt="Card image cap" />
-                <div class="card-body mt-5">
-                  <h5 class="card-title " style={style1}>
+                <img className="card-img-top " src={img1} alt="Card image cap" />
+                <div className="card-body  ">
+                  <h5 className="card-title " style={style1}>
                     BeyondFit Mom{" "}
                   </h5 >{" "}
 
                   <br />
-                  <p class="card-text mt-3" style={{ textAlign: "center" }}>
+                  <p className="card-text mt-3" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Female Clients Only, Unlimited Virtual Access,</span> <br /> <span style={{ color: "green" }}>Fitness for
@@ -333,13 +333,13 @@ const Gyms = () => {
             </div>
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards12 ">
-                <img class="card-img-top " src={img2} alt="Card image cap" />
-                <div class="card-body mt-5">
-                  <h5 class="card-title " style={style1}>
+                <img className="card-img-top " src={img2} alt="Card image cap" />
+                <div className="card-body  ">
+                  <h5 className="card-title " style={style1}>
                     PVolve{" "}
                   </h5>
                   <br />
-                  <p class="card-text mb-5" style={{ textAlign: "center" }}>
+                  <p className="card-text mb-5" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Unlimited Access, Virtual Sculpting Classes,{" "}
@@ -361,12 +361,12 @@ const Gyms = () => {
 
             <div className="col-md-6 col-sm-12 col-12">
               <div className="cards cards13">
-                <img class="card-img-top" src={img3} alt="Card image cap" />
-                <div class="card-body">
-                  <h5 class="card-title" style={style1}>
+                <img className="card-img-top" src={img3} alt="Card image cap" />
+                <div className="card-body">
+                  <h5 className="card-title" style={style1}>
                     Curves{" "}
                   </h5>
-                  <p class="card-text" style={{ textAlign: "center" }}>
+                  <p className="card-text" style={{ textAlign: "center" }}>
                     {" "}
                     <span style={{ color: "blue" }}>
                       Female Clients Only, Unlimited In-Person and Virtual
@@ -387,7 +387,7 @@ const Gyms = () => {
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

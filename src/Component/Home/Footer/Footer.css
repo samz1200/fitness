@@ -5,7 +5,6 @@
 }
 .subscribe-area {
   background-color: #000000;
-  
 }
 .subscribe-area-left h2 span {
   color: #fff;
@@ -58,33 +57,51 @@
   margin-right: 10px;
   width: 60px;
 }
-.bottom a{
-text-decoration: none;
-color:#fff;
-padding: 30px;
-font-weight: 700;
+.bottom a {
+  text-decoration: none;
+  color: #fff;
+  /* padding: 30px; */
+  font-size: 14px;
+  font-weight: 700;
+}
+.bottomLinks {
+  padding: 1rem 0;
+  background: red;
+  text-align: center;
+  margin: 10px;
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
- 
+
   .subscribe-area {
     background-color: #000000;
     margin-top: 5700px;
   }
   .subscribe-right ul li {
     display: flex;
-  
+
     text-transform: uppercase;
     /* font-weight: 700; */
     font-size: 24px;
     margin-bottom: 12px;
     text-decoration: none;
   }
-  
+
   .subscribe-box input {
-    width: 150%;
+    width: 100%;
     padding: 8px 13px;
     border: 0;
     border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .subscribe-box button {
+    margin: 0 !important;
+    width: 100%;
+  }
+  .subscribe-area-left h2 span {
+    font-size: 25px;
+  }
+  .subscribe-area-left h2 {
+    font-size: 25px;
   }
 }

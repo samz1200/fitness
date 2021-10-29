@@ -5,11 +5,11 @@ const Affiliate = () => {
   const style1 = {
     textAlign: "center",
     color: "black",
-    fontSize: "50px",
+    fontSize: "30px",
   };
   const img = {
-    maxWidth: '80%',
-    height: 'auto'
+    width: '13rem',
+    height: '13rem'
   }
   return (
     <div>
@@ -29,7 +29,7 @@ const Affiliate = () => {
                 </span>{" "}
                 <br />{" "}
 
-                <span style={{ color: "green" }}>
+                <span style={{ color: "gray" }}>
                   {" "}
                   BIO{" "}
                 </span>

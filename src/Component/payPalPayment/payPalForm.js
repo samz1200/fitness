@@ -115,18 +115,19 @@ const Paypal = () => {
                                             type="number"
                                             id="typeEmailX"
                                             name="referral"
+                                            placeholder="Referral Code"
                                             value={paymentObj.referral}
                                             onChange={handleChange}
-                                            onBlur={() =>
-                                                simpleValidator.current.showMessageFor("referral")
-                                            }
-                                            class="form-control form-control-lg"
+                                            // onBlur={() =>
+                                            //     simpleValidator.current.showMessageFor("referral")
+                                            // }
+                                            class="form-control form-control-md"
                                         />
-                                        {simpleValidator.current.message(
+                                        {/* {simpleValidator.current.message(
                                             "referral",
                                             paymentObj.referral,
                                             "required|min:6"
-                                        )}
+                                        )} */}
                                         <label class="form-label" for="typeEmailX">Referral Code</label>
                                     </div>
 
@@ -134,12 +135,13 @@ const Paypal = () => {
                                         <input
                                             type="text"
                                             name="fName"
+                                            placeholder="First Name"
                                             value={paymentObj.fName}
                                             onChange={handleChange}
                                             onBlur={() =>
                                                 simpleValidator.current.showMessageFor("fName")
                                             }
-                                            class="form-control form-control-lg"
+                                            class="form-control form-control-md"
                                         />
                                         {simpleValidator.current.message(
                                             "fName",
@@ -154,12 +156,13 @@ const Paypal = () => {
                                         <input
                                             type="text"
                                             name="lName"
+                                            placeholder="Last Name"
                                             value={paymentObj.lName}
                                             onChange={handleChange}
                                             onBlur={() =>
                                                 simpleValidator.current.showMessageFor("lName")
                                             }
-                                            class="form-control form-control-lg"
+                                            class="form-control form-control-md"
                                         />
                                         {simpleValidator.current.message(
                                             "lName",
@@ -173,8 +176,7 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="date"
-
-                                            class="form-control form-control-lg"
+                                            class="form-control form-control-md"
                                             name="dateOfBirth"
                                             value={paymentObj.dateOfBirth}
                                             onChange={handleChange}
@@ -204,8 +206,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="email"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Email"
+                                            class="form-control form-control-md"
                                             name="email"
                                             value={paymentObj.email}
                                             onChange={handleChange}
@@ -225,8 +227,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="text"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Phone Number"
+                                            class="form-control form-control-md"
                                             name="pNumber"
                                             value={paymentObj.pNumber}
                                             onChange={handleChange}
@@ -237,7 +239,7 @@ const Paypal = () => {
                                         {simpleValidator.current.message(
                                             "pNumber",
                                             paymentObj.pNumber,
-                                            ['required', "integer", { min: 11 }, { max: 11 }],
+                                            ['required', "integer", { min: 10 }, { max: 10 }],
                                             { className: 'text-danger' }
                                         )}
                                         <label class="form-label"  >Phone Number</label>
@@ -246,8 +248,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="text"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Address"
+                                            class="form-control form-control-md"
                                             name="address"
                                             value={paymentObj.address}
                                             onChange={handleChange}
@@ -265,15 +267,19 @@ const Paypal = () => {
                                     </div>
 
                                     <div class="form-outline ">
-                                        <input type="text" class="form-control form-control-lg" />
+                                        <input
+                                            type="text"
+                                            placeholder="Apt/Suite/Unite (optional)"
+                                            class="form-control form-control-md" />
                                         <label class="form-label"  >Apt/Suite/Unite (optional)</label>
                                     </div>
 
                                     <div class="form-outline ">
                                         <input
                                             type="text"
-                                            class="form-control form-control-lg"
+                                            class="form-control form-control-md"
                                             name="emContactfName"
+                                            placeholder="Emergency Contact First Name"
                                             value={paymentObj.emContactfName}
                                             onChange={handleChange}
                                             onBlur={() =>
@@ -286,13 +292,13 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Emergency Contact First</label>
+                                        <label class="form-label"  >Emergency Contact First Name</label>
                                     </div>
                                     <div class="form-outline ">
                                         <input
                                             type="text"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Emergency Contact Last Name"
+                                            class="form-control form-control-md"
                                             name="emContactlName"
                                             value={paymentObj.emContactlName}
                                             onChange={handleChange}
@@ -311,8 +317,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="email"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Emergency Contact E-mail"
+                                            class="form-control form-control-md"
                                             name="emContacteMail"
                                             value={paymentObj.emContacteMail}
                                             onChange={handleChange}
@@ -332,8 +338,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="text"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Emergency Contact Phone Number"
+                                            class="form-control form-control-md"
                                             name="emContactpNumber"
                                             value={paymentObj.emContactpNumber}
                                             onChange={handleChange}
@@ -352,8 +358,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="password"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Password"
+                                            class="form-control form-control-md"
                                             name="password"
                                             value={paymentObj.password}
                                             onChange={handleChange}
@@ -373,8 +379,8 @@ const Paypal = () => {
                                     <div class="form-outline ">
                                         <input
                                             type="password"
-
-                                            class="form-control form-control-lg"
+                                            placeholder="Confirm Password"
+                                            class="form-control form-control-md"
                                             name="confirmPassword"
                                             value={paymentObj.confirmPassword}
                                             onChange={handleChange}
@@ -395,8 +401,8 @@ const Paypal = () => {
                                         pricevalue === "150" || pricevalue === "500" ?
                                             <>
                                                 <div class="form-outline ">
-                                                    <input type="password" id="typePasswordX" placeholder={`$ ${pricevalue} per Month`} disabled class="form-control form-control-lg" />
-                                                    <label class="form-label" for="typePasswordX">$500 per Month</label>
+                                                    <input type="password" id="typePasswordX" placeholder={`$ ${pricevalue} per Month`} disabled class="form-control form-control-md" />
+                                                    <label class="form-label" for="typePasswordX">${pricevalue} per Month</label>
                                                 </div>
 
                                                 <div class="form-outline ">
@@ -421,6 +427,7 @@ const Paypal = () => {
                                                 </div>
 
                                                 <div class="form-outline ">
+                                                    <label>1 Free Massage every 4 months</label><br />
                                                     <input
                                                         type="checkbox"
                                                         checked
@@ -428,10 +435,10 @@ const Paypal = () => {
                                                     // onChange={handleChange}
                                                     // value={paymentObj.freeMessage}
                                                     />
-                                                    <label>1 Free Massage every 4 months</label><br />
                                                 </div>
 
                                                 <div class="form-outline ">
+                                                    <label>1 Free Physical Therapy session every 4 months </label><br />
                                                     <input
                                                         type="checkbox"
                                                         checked
@@ -439,7 +446,6 @@ const Paypal = () => {
                                                     // onChange={handleChange}
                                                     // value={paymentObj.freePhysicalTherapy}
                                                     />
-                                                    <label>1 Free Physical Therapy session every 4 months </label><br />
                                                 </div>
                                             </>
                                             : ""

@@ -44,13 +44,6 @@ const Header = () => {
             <Nav.Link href="/price" style={style1}>
               Pricing
             </Nav.Link>
-            <Nav.Link
-              href="https://www.eventbrite.com/e/free-food-beverages-tickets-143397942105 "
-              id="testimonials"
-              style={{ color: "white" }}
-            >
-              Upcoming <br /> Events
-            </Nav.Link>
             <Nav.Link href="/trainer" style={{ color: "white" }}>
               Personal <br />
               Trainers

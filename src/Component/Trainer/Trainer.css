@@ -1,11 +1,13 @@
 .image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  margin-top: 15px;
 }
 .card1 {
   border-radius: 10px 15px;
   box-shadow: 10px 5px 5px;
-  margin: 10px;
+  margin: 15px 0;
+  text-align: center;
 }
 
 .card1 a {
@@ -14,7 +16,7 @@
   text-decoration: none;
   background-color: #008dc2;
   color: #fff;
-  height: 250px;
+  padding: 2rem;
 }
 .card1 a:hover{
   
@@ -29,17 +31,8 @@
   color: #fff !important;
   padding: 10px 15px;
   border-radius: 5px;
-
   font-size: 15px;
   border-radius: 12px;
-  position: absolute;
-  /* margin-left:37%;
-      margin-top: 210px;
-      width: 150px; */
-  /* margin-right: 25px; */
-  margin-top: -60px;
-  width: 150px;
-  margin-left: 8%;
 }
 .signup1 {
   text-decoration: none;
