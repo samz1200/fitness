@@ -3,6 +3,7 @@ import Header from "../Home/Header/Header";
 import "./Trainer.css";
 import image from "../../images/b3.jpg";
 import { Link } from "react-router-dom";
+import BottomButtons from "../Home/bottomButtons/bottomButton";
 const Trainer = () => {
   const mystyle = {
     color: "red",
@@ -17,7 +18,7 @@ const Trainer = () => {
   return (
     <div>
       <Header></Header>
-      <div className="row" style={{ width: "100%", margin: "auto" }}>
+      <div className="row" style={{ width: "100%", margin: "1rem auto" }}>
         <div className="col-lg-4 col-md-12">
           <div className="image">
             <img src={image} alt="" />
@@ -46,7 +47,7 @@ const Trainer = () => {
                 Sign-Up Now!
               </span>
             </Link>
-            <h4 style={style1}>(First Month Free for a limited time only)</h4>
+            <h4 style={style1}></h4>
           </div>
         </div>
         <div className="col-lg-4 col-md-12">
@@ -76,6 +77,7 @@ const Trainer = () => {
           </div>
         </div>
       </div>
+      <BottomButtons />
     </div>
   );
 };

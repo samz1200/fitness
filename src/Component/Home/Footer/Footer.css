@@ -66,16 +66,20 @@
 }
 .bottomLinks {
   padding: 1rem 0;
-  background: red;
+  background: lightgray;
   text-align: center;
   margin: 10px;
+  border-radius: 2rem;
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 
+  .bottomLinks {
+    width: 100%;
+  }
   .subscribe-area {
     background-color: #000000;
-    margin-top: 5700px;
+    /* margin-top: 5700px; */
   }
   .subscribe-right ul li {
     display: flex;

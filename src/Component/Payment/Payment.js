@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BottomButtons from "../Home/bottomButtons/bottomButton";
 import Header from "../Home/Header/Header";
 import "./Payment.css";
 
@@ -16,7 +17,7 @@ const Payment = () => {
                   <sup>$</sup>150<span> / month</span>
                 </div>
                 <h3 style={{ color: "#ff901c" }}>
-                  Select Up to 4 <br /> National Gyms or Studio Memberships <br />(one-time fee of $25 each time you switch Gyms or Studios)
+                  Select Up to 4 <br /> National Gyms or Studio Memberships
                 </h3>
                 <div className="container" style={{ textAlign: "left" }}>
                   <div class="row text">
@@ -61,7 +62,7 @@ const Payment = () => {
                   <sup>$</sup>500<span> / month</span>
                 </div>
                 <h3 style={{ color: "#ff901c" }}>
-                  Select Up to 10<br /> National Gyms or Studio Memberships<br />(one-time fee of $25 each time you switch Gyms or Studios)
+                  Select Up to 10<br /> National Gyms or Studio Memberships
                 </h3>
                 <div className="container" style={{ textAlign: "left" }}>
                   <div class="row  text">
@@ -103,6 +104,7 @@ const Payment = () => {
           </div>
         </div>
       </section>
+      <BottomButtons />
     </div>
   );
 };

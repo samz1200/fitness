@@ -5,31 +5,16 @@ import {
   InputLabel,
   Input,
   Button,
-  makeStyles,
   Typography,
 } from "@material-ui/core";
 import { addGymOptions } from "../../Service/api";
 
-const useStyles = makeStyles({
-  container: {
-    width: "50%",
-    margin: "5% 0 0 25%",
-    "& > *": {
-      marginTop: 20,
-    },
-  },
-  pTag: {
-    margin: "5px",
-    background: "#303F9F",
-    color: "white",
-    padding: "10px",
-  },
-});
+
 
 const GymOptions = () => {
   const [option, setOption] = useState([]);
   const [value, setValue] = useState();
-  const classes = useStyles();
+  
 
   const submitOptions = async () => {
     const optionData = {
@@ -54,7 +39,7 @@ const GymOptions = () => {
 
   return (
     <>
-      <FormGroup className={classes.container}>
+      <FormGroup >
         <Typography variant="h4">Gym Radio Options</Typography>
         <FormControl>
           <InputLabel htmlFor="my-input">Enter Option</InputLabel>
@@ -78,7 +63,7 @@ const GymOptions = () => {
         <FormControl>
           <div style={{ display: "flex" }}>
             {option?.map((item, index) => (
-              <p className={classes.pTag} key={index}>
+              <p  key={index}>
                 {item}
               </p>
             ))}

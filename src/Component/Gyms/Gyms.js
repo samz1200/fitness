@@ -15,6 +15,7 @@ import pic8 from "../../images/g10.png";
 import pic9 from "../../images/g11.png";
 import pic10 from "../../images/g12.jpg";
 import { getGyms } from "../../Service/api";
+import BottomButtons from "../Home/bottomButtons/bottomButton";
 const Gyms = () => {
   const [gyms, setGyms] = useState();
   // console.log(gyms)
@@ -390,6 +391,7 @@ const Gyms = () => {
           {/* </div> */}
         </div>
       </div>
+      <BottomButtons />
     </div>
   );
 };

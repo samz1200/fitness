@@ -406,7 +406,7 @@ const Paypal = () => {
                                                 </div>
 
                                                 <div class="form-outline ">
-                                                    <label class="form-label"  >Select Up to 4 National Gym or Studio Memberships
+                                                    <label class="form-label"  >Select Up to 4 <br /> National Gym or Studio Memberships<br />
                                                         (one-time fee of $25 each time you switch Gyms or Studios)   </label>
                                                 </div>
                                                 <div style={{ display: "flex", justifyContent: "space-around", margin: "1rem 0" }}>

@@ -5,7 +5,7 @@ import {
   InputLabel,
   Input,
   Button,
-  makeStyles,
+ 
   Typography,
 } from "@material-ui/core";
 import { getUsers, editUser } from "../../Service/api";
@@ -17,20 +17,12 @@ const initialValue = {
   pNumber: "",
 };
 
-const useStyles = makeStyles({
-  container: {
-    width: "50%",
-    margin: "5% 0 0 25%",
-    "& > *": {
-      marginTop: 20,
-    },
-  },
-});
+
 
 const EditUser = ({ id, setShowEditForm }) => {
   const [user, setUser] = useState(initialValue);
   const { fName, lName, referral, email, pNumber } = user;
-  const classes = useStyles();
+  
 
   useEffect(() => {
     loadUserDetails();
@@ -52,7 +44,7 @@ const EditUser = ({ id, setShowEditForm }) => {
   };
 
   return (
-    <FormGroup className={classes.container}>
+    <FormGroup >
       <Typography variant="h4">Edit Information</Typography>
       <FormControl>
         <InputLabel htmlFor="my-input">First Name</InputLabel>

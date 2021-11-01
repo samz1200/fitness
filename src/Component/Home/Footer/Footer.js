@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import doctor1 from "../../../images/doctor1.png";
 import P1 from "../../../images/P1.png";
 import d3 from "../../../images/d3.jpg";
+import twitter from "../../../images/twitter.png";
+import podcast from "../../../images/podcast.png";
+import facebook from "../../../images/fb.png";
 import "./Footer.css";
+import BottomButtons from "../bottomButtons/bottomButton";
 const Footer = () => {
-  const [comming, setComming] = useState(false);
   return (
     <section>
       <div className="subscribe-area p-5">
@@ -29,46 +32,39 @@ const Footer = () => {
                   <li>
                     <a href="">
                       <img src={doctor1} alt="" />
-                      <span style={{fontSize: "14px"}}>Free Physical Therapy</span>
+                      <span style={{ fontSize: "12px" }}>Free Physical Therapy</span>
                     </a>
                   </li>
                   <li>
                     <a href="">
                       <img src={P1} alt="" />
-                      <span style={{fontSize: "14px"}}>Free Massages</span>
+                      <span style={{ fontSize: "12px" }}>Free Massages</span>
                     </a>
                   </li>
                   <li>
                     <a href="">
                       <img src={d3} alt="" />
-                      <span style={{fontSize: "14px"}}>Free Personal Training</span>
+                      <span style={{ fontSize: "12px" }}>Free Personal Training</span>
                     </a>
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
-          <div className="row bottom">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm bottomLinks">
-                  {/* <a href="www.PayAllAthletes.com" onClick={() => setComming(true)}>{comming ? "Coming Soon" : "Pay All Athletes"} </a> */}
-                  <span style={{ color: "white", cursor: "pointer" }} onClick={() => setComming(true)}>{comming ? "Coming Soon" : "Pay All Athletes"} </span>
-                </div>
-                <div class="col-sm bottomLinks">
-                  <a href="www.VonElijah.com/AppDevelopment"> App Development</a>
-                </div>
-                <div class="col-sm bottomLinks">
-                  <a href="/affiliates"> Affiliates </a>
-                </div>
-                <div class="col-sm bottomLinks">
-                  <a href="www.ConnectingHelpingHandsFoundation.org">Upcoming Events </a>
-                </div>
+              <div style={{ display: "flex", justifyContent: "space-around" }}>
+                <a href="">
+                  <img style={{width: "2rem", height: "2rem"}} src={twitter} alt="" />
+                </a>
+                <a href="">
+                  <img style={{width: "2rem", height: "2rem", background: "white"}} src={podcast} alt="" />
+                </a>
+                <a href="">
+                  <img style={{width: "2rem", height: "2rem"}} src={facebook} alt="" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <BottomButtons />
     </section>
   );
 };

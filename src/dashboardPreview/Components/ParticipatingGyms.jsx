@@ -7,7 +7,6 @@ import {
   TextareaAutosize,
   Input,
   Button,
-  makeStyles,
   Typography,
 } from "@material-ui/core";
 import { getGyms, gymParticipate } from "../../Service/api";
@@ -20,22 +19,12 @@ const initialValue = {
   gymDescription: "",
 };
 
-const useStyles = makeStyles({
-  container: {
-    width: "50%",
-    margin: "5% 0 0 25%",
-    "& > *": {
-      marginTop: 20,
-    },
-  },
-});
 
 const ParticipatingGyms = () => {
   const [gym, setGym] = useState(initialValue);
   const { gymImg, gymName, gymAddress, gymDescription } = gym;
   const history = useHistory();
-  const classes = useStyles();
-  // console.log(gym);
+   // console.log(gym);
 
   useEffect(() => {
     loadUserDetails();
@@ -60,7 +49,7 @@ const ParticipatingGyms = () => {
   };
 
   return (
-    <FormGroup className={classes.container}>
+    <FormGroup>
       <Typography variant="h4">Participating Gyms {"&"} Studios</Typography>
       <FormControl>
         <InputLabel htmlFor="my-input">Gym Name</InputLabel>
@@ -95,14 +84,14 @@ const ParticipatingGyms = () => {
       </FormControl>
       <FormControl>
         <label>Gym Description</label>
-        <TextareaAutosize
+        <textarea
           aria-label="empty textarea"
           placeholder="Enter..."
           name="gymDescription"
           onChange={(e) => onValueChange(e)}
           value={gymDescription}
           style={{ height: 200 }}
-        />
+        ></textarea>
       </FormControl>
       <FormControl>
         <Button variant="contained" color="primary" onClick={() => addGym()}>
