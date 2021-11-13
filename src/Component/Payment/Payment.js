@@ -11,7 +11,7 @@ const Payment = () => {
       <section className="pricing" id="pricing">
         <div className="container">
           <div className="row gy-4">
-            <div className="col-md-6 col-sm-12 col-12">
+            <div className="col-lg-6 col-12">
               <div className="box">
                 <div className="price" style={{ fontWeight: "bold" }}>
                   <sup>$</sup>150<span> / month</span>
@@ -56,7 +56,7 @@ const Payment = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-md-6 col-sm-12 col-12">
+            <div className="col-lg-6 col-12">
               <div className="box">
                 <div className="price" style={{ fontWeight: "bold" }}>
                   <sup>$</sup>500<span> / month</span>

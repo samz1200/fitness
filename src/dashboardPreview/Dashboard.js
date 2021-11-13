@@ -1,4 +1,4 @@
-import { FaGem, FaHeart } from 'react-icons/fa';
+import { FaGem } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { GoThreeBars } from 'react-icons/go';
 import { CgProfile } from 'react-icons/cg'
@@ -7,15 +7,16 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import './css/Dashboard.css'
 import { useState } from 'react';
 import Profile from './Components/profile';
-import profileimg from '../images/profile.jpg'
-import AddUser from './Components/AddUser';
+import profileimg from '../images/profile.jpg';
+// import AddUser from './Components/AddUser';
 import AllUsers from './Components/AllUsers';
 import ParticipatingGyms from './Components/ParticipatingGyms';
 import GymOptions from './Components/Gymoptions';
+import Sendmails from './Components/sendMails';
 
 const AdminDashboard = () => {
-    const [show1, setShow1] = useState(false)
-    const [show2, setShow2] = useState(true)
+    const [show1, setShow1] = useState(true)
+    const [show2, setShow2] = useState(false)
     const [show3, setShow3] = useState(false)
     const [show4, setShow4] = useState(false)
     const [coll, setColl] = useState(false)
@@ -49,8 +50,8 @@ const AdminDashboard = () => {
                         <MenuItem
                             icon={<CgProfile />}
                             onClick={() => {
-                                setShow1(false)
-                                setShow2(true)
+                                setShow1(true)
+                                setShow2(false)
                                 setShow3(false)
                                 setShow4(false)
                             }}
@@ -60,8 +61,8 @@ const AdminDashboard = () => {
                             icon={<FaGem />}
                             onClick={() => {
                                 setShow1(false)
-                                setShow2(false)
-                                setShow3(true)
+                                setShow2(true)
+                                setShow3(false)
                                 setShow4(false)
                             }}>Add Gyms Options</MenuItem>
                         <MenuItem
@@ -69,19 +70,20 @@ const AdminDashboard = () => {
                             onClick={() => {
                                 setShow1(false)
                                 setShow2(false)
-                                setShow3(false)
-                                setShow4(true)
+                                setShow3(true)
+                                setShow4(false)
                             }}>Participating Gyms {"&"} Studios
                         </MenuItem>
-                        {/* <MenuItem
+                        <MenuItem
                             icon={<FaGem />}
                             onClick={() => {
                                 setShow1(false)
                                 setShow2(false)
-                                setShow3(true)
-                            }}>Subscriptions Options
-                        </MenuItem> */}
-                        <MenuItem
+                                setShow3(false)
+                                setShow4(true)
+                            }}>Send Mails Options
+                        </MenuItem>
+                        {/* <MenuItem
                             icon={<FaGem />}
                             onClick={() => {
                                 setShow1(false)
@@ -96,7 +98,7 @@ const AdminDashboard = () => {
                                 setShow2(false)
                                 setShow3(true)
                             }}>Discounts
-                        </MenuItem>
+                        </MenuItem> */}
                     </SidebarContent>
                 </Menu>
             </ProSidebar>
@@ -108,9 +110,10 @@ const AdminDashboard = () => {
                 </div>
                 <div className="sideBarDataDiv">
                     {/* {show1 && <Profile />} */}
-                    {show2 && <AllUsers />}
-                    {show3 && <GymOptions />}
-                    {show4 && <ParticipatingGyms />}
+                    {show1 && <AllUsers />}
+                    {show2 && <GymOptions />}
+                    {show3 && <ParticipatingGyms />}
+                    {show4 && <Sendmails />}
                 </div>
             </div>
         </div>

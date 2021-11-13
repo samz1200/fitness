@@ -3,6 +3,7 @@ import "./Header.css";
 import Navbar from "react-bootstrap/Navbar";
 import { Container, Nav } from "react-bootstrap";
 import logo from "../../../images/logo2.png";
+import profile from "../../../images/profile.jpg";
 import { useHistory } from "react-router";
 const Header = () => {
   const history = useHistory();
@@ -13,15 +14,27 @@ const Header = () => {
   }, [])
   const handleSelect = (e) => {
     if (e.target.value === "logout") {
+      console.log(e.target.value)
       localStorage.removeItem("user")
       setUser({});
       history.push("/");
+      window.location.reload();
+    } else if (e.target.value === "dashboard") {
+      history.push("/dashboard");
+    } else if (e.target.value === "userdashboard") {
+      history.push("/userdashboard");
     }
   }
   const style1 = {
     paddingTop: "30px",
     color: "white",
   };
+  const imgStyle = {
+    width: "4rem",
+    height: "4rem",
+    borderRadius: "50%",
+    marginLeft: "2rem"
+  }
   return (
     <Navbar
       collapseOnSelect
@@ -48,18 +61,35 @@ const Header = () => {
               Personal <br />
               Trainers
             </Nav.Link>
-            <Nav.Link href="/price" style={style1}>
-              Sign Up
-            </Nav.Link>
             {
               user ?
-                <select className="headerbtn selectOption" name="loginProfile" onChange={handleSelect} id="loginProfile" >
-                  <option value="firstName">{user?.fName}</option>
+                "" : <Nav.Link href="/price" style={style1}>
+                  Sign Up
+                </Nav.Link>
+            }
+            {
+              user ?
+                <select className="headerbtn selectOption bg-dark" name="loginProfile" onChange={handleSelect} id="loginProfile" >
+                  <option value="firstName" >{user?.fName}</option>
+                  <option value={user?.email === "admin@gmail.com" ? "dashboard" : "userdashboard"}>Dashboard</option>
                   <option value="logout">logout</option>
+                  {/* <option value="dashboard">
+
+                    {user?.email === "admin@gmail.com" ?
+                      <Nav.Link href="/dashboard" style={style1}>
+                        Dashboard
+                      </Nav.Link> :
+                      <Nav.Link href="/userdashboard" style={style1}>
+                        Dashboard
+                      </Nav.Link>}
+                  </option> */}
                 </select> :
                 <Nav.Link href="/login" style={style1}>Log in</Nav.Link>
             }
             {
+              user ? <img src={profile} style={imgStyle} /> : ""
+            }
+            {/* {
               user ?
                 user?.email === "admin@gmail.com" ?
                   <Nav.Link href="/dashboard" style={style1}>
@@ -68,7 +98,7 @@ const Header = () => {
                   <Nav.Link href="/userdashboard" style={style1}>
                     Dashboard
                   </Nav.Link> : ""
-            }
+            } */}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -19,13 +19,13 @@
 }
 .profileNavBar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 1rem;
     box-shadow: rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 16px 32px -4px;
     border-radius: 0 0 10px 10px;
 }
 .profileTabs {
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
     font-weight: 450;
     cursor: pointer;
     color: rgb(99, 115, 129);

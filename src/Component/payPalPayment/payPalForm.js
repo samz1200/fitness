@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { addUser, getGymOptions } from '../../Service/api';
 // import { Button, Form } from "react-bootstrap";
 import Header from "../Home/Header/Header";
@@ -17,35 +17,37 @@ const Paypal = () => {
 
     const loadGymDetails = async () => {
         const response = await getGymOptions();
-        console.log(response.data)
-        // setArr(response.data);
+        // console.log(response?.data[0]?.option)
+        setArr(response?.data[0]?.option);
     };
 
-    // const arr = [
-    //     "Gold’s Gym",
-    //     "Crunch Fitness",
-    //     "Fitness Connection",
-    //     "Glo",
-    //     "Celebration",
-    //     "BeyondFit Mom",
-    //     "PVolve",
-    //     "24 Hour Fitness",
-    //     "Planet Fitness ",
-    //     "Snap Fitness",
-    //     "Academy of Self Defense ",
-    //     "Curves,",
-    // ];
+    const arr1 = [
+        "Gold’s Gym",
+        "Crunch Fitness",
+        "Fitness Connection",
+        "Glo",
+        "Celebration",
+        "BeyondFit Mom",
+        "PVolve",
+        "24 Hour Fitness",
+        "Planet Fitness ",
+        "Snap Fitness",
+        "Academy of Self Defense ",
+        "Curves",
+    ];
 
     const [checkedState, setCheckedState] = useState(
-        new Array(arr?.length).fill(false)
+        new Array(arr1?.length).fill(false)
     );
     const [checkout, setCheckOut] = useState(false);
+    const [check, setCheck] = useState();
     const [paymentObj, setPaymentObj] = useState({
         referral: "",
         fName: "",
         lName: "",
         dateOfBirth: "",
         gender: "Male",
+        userType: "Trainer",
         email: "",
         pNumber: "",
         address: "",
@@ -57,21 +59,47 @@ const Paypal = () => {
         password: "",
         confirmPassword: "",
         selectedGyms: [],
-        freeMessage: "",
-        freePhysicalTherapy: "",
+        freeMessage: 1,
+        freePhysicalTherapy: 1,
     });
-
+    let newarr = [];
     const handleCheck = (position) => {
-        const updatedCheckedState = checkedState.map((item, index) =>
+        var updatedCheckedState;
+        updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
-        setCheckedState(updatedCheckedState);
-        let newarr = [];
+        if (pricevalue === "150") {
+            var truearr = [];
+            updatedCheckedState.map(item => (
+                item === true ? truearr.push(item) : ""
+            ))
+            if (truearr.length <= 4) {
+                setCheckedState(updatedCheckedState);
+                setCheck("");
+            } else {
+                setCheck("you can select upto 4 Gyms.");
+            }
+        }
+        if (pricevalue === "500") {
+            var truearr = [];
+            updatedCheckedState.map(item => (
+                item === true ? truearr.push(item) : ""
+            ))
+            if (truearr.length <= 10) {
+                setCheckedState(updatedCheckedState);
+                setCheck("");
+            } else {
+                setCheck("you can select upto 10 Gyms.");
+            }
+        }
+        console.log(updatedCheckedState)
+
         updatedCheckedState.map((boolen, index) =>
             boolen === true ? newarr.push(index) : ""
         );
         // console.log(newarr);
         let name_array = [];
+
         newarr.map((value) => {
             arr.filter((it, index) => {
                 return value === index ? name_array.push(it) : "";
@@ -86,15 +114,16 @@ const Paypal = () => {
         setPaymentObj({ ...paymentObj, [name]: value })
     }
     const submitForm = async () => {
+        console.log(paymentObj)
         if (simpleValidator.current.allValid()) {
             if (paymentObj.password === paymentObj.confirmPassword) {
                 await addUser(paymentObj);
                 setCheckOut(true);
             } else {
-                alert("password not matching")
+                console.log("password not matching")
             }
         } else {
-            alert("please fill all fields")
+            console.log("please fill all fields")
         }
     }
 
@@ -128,7 +157,7 @@ const Paypal = () => {
                                             paymentObj.referral,
                                             "required|min:6"
                                         )} */}
-                                        <label class="form-label" for="typeEmailX">Referral Code</label>
+                                        {/* <label class="form-label" for="typeEmailX">Referral Code</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -149,7 +178,7 @@ const Paypal = () => {
                                             "required|min:3",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label">First Name</label>
+                                        {/* <label class="form-label">First Name</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -170,7 +199,7 @@ const Paypal = () => {
                                             "required|min:3",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Last Name</label>
+                                        {/* <label class="form-label"  >Last Name</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -190,7 +219,7 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Date of Birth</label>
+                                        {/* <label class="form-label"  >Date of Birth</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -200,7 +229,15 @@ const Paypal = () => {
                                             <option value="Transgender">Transgender</option>
                                             <option value="Non-Binary">Non-Binary</option>
                                         </select><br />
-                                        <label class="form-label"  >Gender</label>
+                                        {/* <label class="form-label"  >Gender</label> */}
+                                    </div>
+
+                                    <div class="form-outline ">
+                                        <select name="gender" value={paymentObj.userType} class="formSelectTag" onChange={handleChange} id="selection">
+                                            <option value="Trainer">Trainer</option>
+                                            <option value="User">User</option>
+                                        </select><br />
+                                        {/* <label class="form-label"  >Gender</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -221,7 +258,7 @@ const Paypal = () => {
                                             'required|email',
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >E-mail</label>
+                                        {/* <label class="form-label"  >E-mail</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -239,10 +276,10 @@ const Paypal = () => {
                                         {simpleValidator.current.message(
                                             "pNumber",
                                             paymentObj.pNumber,
-                                            ['required', "integer", { min: 10 }, { max: 10 }],
+                                            ['required', "integer", { max: 10 }],
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Phone Number</label>
+                                        {/* <label class="form-label"  >Phone Number</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -263,7 +300,7 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Address</label>
+                                        {/* <label class="form-label"  >Address</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -271,7 +308,7 @@ const Paypal = () => {
                                             type="text"
                                             placeholder="Apt/Suite/Unite (optional)"
                                             class="form-control form-control-md" />
-                                        <label class="form-label"  >Apt/Suite/Unite (optional)</label>
+                                        {/* <label class="form-label"  >Apt/Suite/Unite (optional)</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -292,7 +329,7 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Emergency Contact First Name</label>
+                                        {/* <label class="form-label"  >Emergency Contact First Name</label> */}
                                     </div>
                                     <div class="form-outline ">
                                         <input
@@ -312,7 +349,7 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Emergency Contact Last Name</label>
+                                        {/* <label class="form-label"  >Emergency Contact Last Name</label> */}
                                     </div>
                                     <div class="form-outline ">
                                         <input
@@ -332,7 +369,7 @@ const Paypal = () => {
                                             "required",
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Emergency Contact E-mail</label>
+                                        {/* <label class="form-label"  >Emergency Contact E-mail</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -350,10 +387,10 @@ const Paypal = () => {
                                         {simpleValidator.current.message(
                                             "emContactpNumber",
                                             paymentObj.emContactpNumber,
-                                            ['required', "integer", { min: 11 }, { max: 11 }],
+                                            ['required', "integer", { max: 10 }],
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label"  >Emergency Contact Phone Number</label>
+                                        {/* <label class="form-label"  >Emergency Contact Phone Number</label> */}
                                     </div>
                                     <div class="form-outline ">
                                         <input
@@ -373,7 +410,7 @@ const Paypal = () => {
                                             ['required', { min: 8 }],
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label" for="typePasswordX">Password</label>
+                                        {/* <label class="form-label" for="typePasswordX">Password</label> */}
                                     </div>
 
                                     <div class="form-outline ">
@@ -394,7 +431,7 @@ const Paypal = () => {
                                             ['required', { min: 8 }],
                                             { className: 'text-danger' }
                                         )}
-                                        <label class="form-label" for="typePasswordX">Confirm Password</label>
+                                        {/* <label class="form-label" for="typePasswordX">Confirm Password</label> */}
                                     </div>
 
                                     {
@@ -406,7 +443,7 @@ const Paypal = () => {
                                                 </div>
 
                                                 <div class="form-outline ">
-                                                    <label class="form-label"  >Select Up to 4 <br /> National Gym or Studio Memberships<br />
+                                                    <label class="form-label"  >Select Up to {pricevalue === "150" ? 4 : 10} <br /> National Gym or Studio Memberships<br />
                                                         (one-time fee of $25 each time you switch Gyms or Studios)   </label>
                                                 </div>
                                                 <div style={{ display: "flex", justifyContent: "space-around", margin: "1rem 0" }}>
@@ -419,11 +456,28 @@ const Paypal = () => {
                                                                     name={item}
                                                                     checked={checkedState[index]}
                                                                     onChange={() => handleCheck(index)}
+                                                                    style={{ marginRight: "1rem" }}
                                                                 />
                                                                 <label>{item}</label><br />
                                                             </div>
                                                         ))}
+                                                        <p style={{ color: "red", fontSize: "14px", margin: "1rem 0", fontWeight: "bold" }}>{check}</p>
                                                     </div>
+                                                    {/* <div style={{ textAlign: "left" }}>
+                                                        {arr?.slice(5, arr?.length).map((item, index) => (
+                                                            <div className="form-outline" key={index}>
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={item}
+                                                                    name={item}
+                                                                    checked={checkedState[index]}
+                                                                    onChange={() => handleCheck(index)}
+                                                                    style={{ marginRight: "1rem" }}
+                                                                />
+                                                                <label>{item}</label><br />
+                                                            </div>
+                                                        ))}
+                                                    </div> */}
                                                 </div>
 
                                                 <div class="form-outline ">

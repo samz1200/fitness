@@ -5,7 +5,6 @@ import {
   InputLabel,
   Input,
   Button,
- 
   Typography,
 } from "@material-ui/core";
 import { getUsers, editUser } from "../../Service/api";

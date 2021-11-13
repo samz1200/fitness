@@ -7,11 +7,11 @@ import FollowerView from '../subComponents/followersView';
 import PostView from '../subComponents/postsView';
 import ProfileView from '../subComponents/profileView';
 import ProjectView from '../subComponents/projectsView';
-const Profile = () => {
-    const [check1, setCheck1] = useState(true);
-    const [check2, setCheck2] = useState(false);
-    const [check3, setCheck3] = useState(false);
-    const [check4, setCheck4] = useState(false);
+const Profile = ({ id }) => {
+    // const [check1, setCheck1] = useState(true);
+    // const [check2, setCheck2] = useState(false);
+    // const [check3, setCheck3] = useState(false);
+    // const [check4, setCheck4] = useState(false);
     return (
         <div>
             <h1 style={{ margin: "3rem 0" }}>Profile</h1>
@@ -24,17 +24,18 @@ const Profile = () => {
             <div className="profileNavBar">
                 <div
                     className="profileTabs"
-                    style={{ borderBottom: check1 ? "2px solid #05ce78" : "" }}
-                    onClick={() => {
-                        setCheck1(true);
-                        setCheck2(false);
-                        setCheck3(false);
-                        setCheck4(false);
+                    style={{ borderBottom: "2px solid #05ce78" }}
+                // style={{ borderBottom: check1 ? "2px solid #05ce78" : "" }}
+                // onClick={() => {
+                //     setCheck1(true);
+                //     setCheck2(false);
+                //     setCheck3(false);
+                //     setCheck4(false);
 
-                    }}
+                // }}
                 ><FaUserCircle /> Profile
                 </div>
-                <div
+                {/* <div
                     className="profileTabs"
                     style={{ borderBottom: check2 ? "2px solid #05ce78" : "" }}
                     onClick={() => {
@@ -44,8 +45,8 @@ const Profile = () => {
                         setCheck4(false);
 
                     }}><FaHeart /> Followers
-                </div>
-                <div
+                </div> */}
+                {/* <div
                     className="profileTabs"
                     style={{ borderBottom: check3 ? "2px solid #05ce78" : "" }}
                     onClick={() => {
@@ -55,7 +56,7 @@ const Profile = () => {
                         setCheck4(false);
 
                     }}><GrProjects /> Posts {"&"} Projects
-                </div>
+                </div> */}
                 {/* <div
                     className="profileTabs"
                     style={{ borderBottom: check4 ? "2px solid #05ce78" : "" }}
@@ -69,10 +70,11 @@ const Profile = () => {
                 </div> */}
             </div>
             <div>
-                {check1 && <ProfileView />}
-                {check2 && <FollowerView />}
-                {check3 && <PostView />}
-                {check4 && <ProjectView />}
+                <ProfileView userID={id} />
+                {/* {check1 && <ProfileView />} */}
+                {/* {check2 && <FollowerView />} */}
+                {/* {check3 && <PostView />} */}
+                {/* {check4 && <ProjectView />} */}
             </div>
         </div>
     )

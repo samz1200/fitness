@@ -18,3 +18,9 @@
     outline: lightgray;
     cursor: pointer;
 }
+.form-control {
+    margin-bottom: 1.5rem !important;
+}
+.formSelectTag{
+    margin-bottom: 1.5rem !important;
+}

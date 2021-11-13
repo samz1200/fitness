@@ -2,10 +2,25 @@ import { ImLocation2 } from 'react-icons/im';
 import { AiFillMail } from 'react-icons/ai';
 import { FaRegAddressCard } from 'react-icons/fa';
 import '../css/subComponents/profileView.css'
-const ProfileView = () => {
+import { useEffect, useState } from 'react';
+import { getUsers } from '../../Service/api';
+import PayPalMethod from '../../Component/payPalPayment/payPalIntegration';
+const ProfileView = ({ userID }) => {
+    const [user, setUser] = useState();
+    const [check, setCheck] = useState(false);
+    useEffect(() => {
+        loadUserDetails();
+        console.log(user)
+    }, [userID]);
+
+    const loadUserDetails = async () => {
+        const response = await getUsers(userID);
+        setUser(response.data);
+    };
+
     return (
         <div>
-            <div className="profileViewDiv">
+            {/* <div className="profileViewDiv">
                 <p style={{ borderRight: "1px solid", padding: "0 3rem", textAlign: "center" }}>
                     <span style={{ fontWeight: "bold", fontSize: "2rem" }}>38,663</span>
                     <br />Follower
@@ -14,6 +29,17 @@ const ProfileView = () => {
                     <span style={{ fontWeight: "bold", fontSize: "2rem" }}>18,663</span>
                     <br />Following
                 </p>
+            </div> */}
+            <div className="profileViewDiv">
+                {
+                    check ?
+                        <PayPalMethod pricevalue="150" /> : <button
+                            style={{
+                                padding: "1rem", border: "none", background: "#05ce78"
+                            }}
+                            onClick={() => setCheck(true)}
+                        >Checkout to paypal</button>
+                }
             </div>
             <div className="profileViewAbout">
                 <h2 style={{ marginBottom: "2rem" }}>About</h2>

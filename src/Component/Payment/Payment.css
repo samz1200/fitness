@@ -99,3 +99,14 @@ font-weight: 700;
 .text1{
 margin-left:30px;
 }
+
+@media (max-width: 510px){
+  .col{
+    font-size: 12px;
+  }
+}
+@media (max-width: 360px){
+  .col{
+    font-size: 9px !important;
+  }
+}

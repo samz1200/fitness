@@ -4,9 +4,9 @@ import {
   FormGroup,
   FormControl,
   InputLabel,
-  TextareaAutosize,
   Input,
   Button,
+  makeStyles,
   Typography,
 } from "@material-ui/core";
 import { getGyms, gymParticipate } from "../../Service/api";
@@ -20,11 +20,12 @@ const initialValue = {
 };
 
 
+
 const ParticipatingGyms = () => {
   const [gym, setGym] = useState(initialValue);
   const { gymImg, gymName, gymAddress, gymDescription } = gym;
   const history = useHistory();
-   // console.log(gym);
+  // console.log(gym);
 
   useEffect(() => {
     loadUserDetails();
@@ -49,7 +50,7 @@ const ParticipatingGyms = () => {
   };
 
   return (
-    <FormGroup>
+    <FormGroup className={classes.container}>
       <Typography variant="h4">Participating Gyms {"&"} Studios</Typography>
       <FormControl>
         <InputLabel htmlFor="my-input">Gym Name</InputLabel>

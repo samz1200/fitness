@@ -5,6 +5,7 @@ import {
   InputLabel,
   Input,
   Button,
+  makeStyles,
   Typography,
 } from "@material-ui/core";
 import { addGymOptions } from "../../Service/api";
@@ -16,19 +17,24 @@ const GymOptions = () => {
   const [value, setValue] = useState();
   
 
-  const submitOptions = async () => {
-    const optionData = {
-      option,
-    };
-    const { data } = await addGymOptions(option);
-    console.log(data.option);
-    if (data) {
-      alert("your gym Options added to your website");
-    }
-  };
+  // const submitOptions = async () => {
+  //   const optionData = {
+  //     option,
+  //   };
+  //   const { data } = await addGymOptions(option);
+  //   console.log(option);
+  //   if (data) {
+  //     alert("your gym Options added to your website");
+  //   }
+  // };
 
-  const addRadioBox = () => {
+  const addRadioBox = async () => {
     setOption([...option, value]);
+    const { data } = await addGymOptions(option);
+    // console.log(data);
+    if (data) {
+      console.log("your gym Options added to your website");
+    }
     setValue("");
   };
 
@@ -57,11 +63,11 @@ const GymOptions = () => {
             color="primary"
             onClick={() => addRadioBox()}
           >
-            Add
+            Submit Option
           </Button>
         </FormControl>
         <FormControl>
-          <div style={{ display: "flex" }}>
+          <div>
             {option?.map((item, index) => (
               <p  key={index}>
                 {item}
@@ -69,7 +75,7 @@ const GymOptions = () => {
             ))}
           </div>
         </FormControl>
-        <FormControl>
+        {/* <FormControl>
           <Button
             variant="contained"
             color="primary"
@@ -77,7 +83,7 @@ const GymOptions = () => {
           >
             Submit all Options
           </Button>
-        </FormControl>
+        </FormControl> */}
       </FormGroup>
     </>
   );

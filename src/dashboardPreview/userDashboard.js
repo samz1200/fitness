@@ -8,6 +8,7 @@ import './css/Dashboard.css'
 import { useState } from 'react';
 import profileimg from '../images/profile.jpg'
 import EditProfile from './Components/EditProfile';
+import Profile from './Components/profile';
 
 const UserDashboard = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -41,6 +42,16 @@ const UserDashboard = () => {
                                 setShow3(false)
                                 setShow4(false)
                             }}
+                        >Profile
+                        </MenuItem>
+                        <MenuItem
+                            icon={<CgProfile />}
+                            onClick={() => {
+                                setShow1(false)
+                                setShow2(true)
+                                setShow3(false)
+                                setShow4(false)
+                            }}
                         >Edit Profile
                         </MenuItem>
                     </SidebarContent>
@@ -53,7 +64,8 @@ const UserDashboard = () => {
                     </div>
                 </div>
                 <div className="sideBarDataDiv">
-                    {show1 && <EditProfile id={user?._id} />}
+                    {show1 && <Profile id={user?._id} />}
+                    {show2 && <EditProfile id={user?._id} />}
                 </div>
             </div>
         </div>

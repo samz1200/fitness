@@ -4,6 +4,7 @@ import axios from 'axios';
 const usersUrl = 'http://localhost:8080/users';
 const gymsUrl = 'http://localhost:8080/gymaddeds';
 const gymOptionsUrl = 'http://localhost:8080/gyms';
+const sendMailUrl = 'http://localhost:8080/sendmails';
 
 export const getUsers = async (id) => {
     id = id || '';
@@ -40,4 +41,9 @@ export const addGymOptions = async (gymdata) => {
 }
 export const getGymOptions = async () => {
     return await axios.get(`${gymOptionsUrl}/getgymoptions`);
+}
+
+export const sendallMailAddress = async (mailObj) => {
+    // console.log(gymdata)
+    return await axios.post(`${sendMailUrl}/mailsend`, mailObj);
 }
