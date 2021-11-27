@@ -48,7 +48,7 @@ const EditProfile = ({ id }) => {
     emContactpNumber,
     password,
   } = user;
-  
+ 
 
   useEffect(() => {
     loadUserDetails();

@@ -4,9 +4,9 @@ import {
   FormGroup,
   FormControl,
   InputLabel,
+  TextareaAutosize,
   Input,
   Button,
-  makeStyles,
   Typography,
 } from "@material-ui/core";
 import { getGyms, gymParticipate } from "../../Service/api";
@@ -18,7 +18,6 @@ const initialValue = {
   gymName: "",
   gymDescription: "",
 };
-
 
 
 const ParticipatingGyms = () => {
@@ -50,7 +49,7 @@ const ParticipatingGyms = () => {
   };
 
   return (
-    <FormGroup className={classes.container}>
+    <FormGroup >
       <Typography variant="h4">Participating Gyms {"&"} Studios</Typography>
       <FormControl>
         <InputLabel htmlFor="my-input">Gym Name</InputLabel>

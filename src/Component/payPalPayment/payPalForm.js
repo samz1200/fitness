@@ -16,9 +16,9 @@ const Paypal = () => {
     }, []);
 
     const loadGymDetails = async () => {
-        const response = await getGymOptions();
-        // console.log(response?.data[0]?.option)
-        setArr(response?.data[0]?.option);
+        const { data } = await getGymOptions();
+        // console.log(data)
+        setArr(data);
     };
 
     const arr1 = [
@@ -448,19 +448,23 @@ const Paypal = () => {
                                                 </div>
                                                 <div style={{ display: "flex", justifyContent: "space-around", margin: "1rem 0" }}>
                                                     <div style={{ textAlign: "left" }}>
-                                                        {arr?.map((item, index) => (
-                                                            <div className="form-outline" key={index}>
-                                                                <input
-                                                                    type="checkbox"
-                                                                    value={item}
-                                                                    name={item}
-                                                                    checked={checkedState[index]}
-                                                                    onChange={() => handleCheck(index)}
-                                                                    style={{ marginRight: "1rem" }}
-                                                                />
-                                                                <label>{item}</label><br />
-                                                            </div>
-                                                        ))}
+                                                        {arr?.map((item, index) => {
+                                                            if (pricevalue == item.price) {
+                                                                return (
+                                                                    <div className="form-outline" key={index}>
+                                                                        <input
+                                                                            type="checkbox"
+                                                                            value={item.value}
+                                                                            name={item.value}
+                                                                            checked={checkedState[index]}
+                                                                            onChange={() => handleCheck(index)}
+                                                                            style={{ marginRight: "1rem" }}
+                                                                        />
+                                                                        <label>{item.value}</label><br />
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        })}
                                                         <p style={{ color: "red", fontSize: "14px", margin: "1rem 0", fontWeight: "bold" }}>{check}</p>
                                                     </div>
                                                     {/* <div style={{ textAlign: "left" }}>

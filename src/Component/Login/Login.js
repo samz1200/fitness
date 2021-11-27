@@ -35,7 +35,7 @@ const Login = () => {
               <div className="card shadow-2-strong" style={{ borderRadius: '1rem' }}>
                 <div className="card-body  text-center">
 
-                  <h3 className="mb-3">Login</h3>
+                  {/* <h3 className="mb-3">Login</h3> */}
 
                   <div className="form-outline ">
                     <input type="email"
@@ -45,7 +45,7 @@ const Login = () => {
                       placeholder="Enter email"
                       className="form-control form-control-lg"
                     />
-                    <label className="form-label" for="typeEmailX">Email</label>
+                    {/* <label className="form-label" for="typeEmailX">Email</label> */}
                   </div>
 
                   <div className="form-outline ">
@@ -57,7 +57,7 @@ const Login = () => {
                       classNameName="form-control"
                       placeholder="Enter password" className="form-control form-control-lg"
                     />
-                    <label className="form-label" for="typePasswordX">Password</label>
+                    {/* <label className="form-label" for="typePasswordX">Password</label> */}
                   </div>
 
 

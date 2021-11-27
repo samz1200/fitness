@@ -1,46 +1,58 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   FormGroup,
   FormControl,
   InputLabel,
   Input,
   Button,
-  makeStyles,
   Typography,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
 import { addGymOptions } from "../../Service/api";
 
 
 
 const GymOptions = () => {
-  const [option, setOption] = useState([]);
-  const [value, setValue] = useState();
-  
+  const [option, setOption] = useState({
+    value: "",
+    price: "",
+  });
+  const [check, setCheck] = useState(false);
 
-  // const submitOptions = async () => {
-  //   const optionData = {
-  //     option,
-  //   };
-  //   const { data } = await addGymOptions(option);
-  //   console.log(option);
-  //   if (data) {
-  //     alert("your gym Options added to your website");
-  //   }
-  // };
 
-  const addRadioBox = async () => {
-    setOption([...option, value]);
+  const submitOptions = async () => {
+    console.log(option);
     const { data } = await addGymOptions(option);
-    // console.log(data);
     if (data) {
-      console.log("your gym Options added to your website");
+      setCheck(true);
     }
-    setValue("");
+    setOption({
+      value: "",
+      price: "",
+    });
+
+    setTimeout(() => {
+      setCheck(false);
+    }, 2000);
   };
 
-  const onValueChange = (e) => {
-    // console.log(e.target.value);
-    setValue(e.target.value);
+  // const addRadioBox = async () => {
+  //   setOption([...option, value]);
+  //   const { data } = await addGymOptions(option);
+  //   if (data) {
+  //     setCheck(true);
+  //   }
+  //   setValue("");
+
+  //   setTimeout(() => {
+  //     setCheck(false);
+  //   }, 2000);
+  // };
+
+  const onValueChange = ({ target }) => {
+    const { name, value } = target;
+    setOption({ ...option, [name]: value });
   };
 
   return (
@@ -50,23 +62,39 @@ const GymOptions = () => {
         <FormControl>
           <InputLabel htmlFor="my-input">Enter Option</InputLabel>
           <Input
-            onChange={(e) => onValueChange(e)}
+            onChange={onValueChange}
             name="option"
-            value={value}
+            value={option.value}
+            name="value"
             id="my-input"
             aria-describedby="my-helper-text"
           />
         </FormControl>
-        <FormControl>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => addRadioBox()}
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Select Price</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={option.price}
+            name="price"
+            label="Price"
+            onChange={onValueChange}
           >
-            Submit Option
+            <MenuItem value={150}>$150</MenuItem>
+            <MenuItem value={500}>$500</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl>
+          <Button variant="contained" color="primary" onClick={submitOptions}>
+            Add Option
           </Button>
         </FormControl>
         <FormControl>
+          <div style={{ display: check ? "block" : "none" }}>
+            <p className={classes.pTag}>Option added</p>
+          </div>
+        </FormControl>
+        {/* <FormControl>
           <div>
             {option?.map((item, index) => (
               <p  key={index}>
@@ -74,7 +102,7 @@ const GymOptions = () => {
               </p>
             ))}
           </div>
-        </FormControl>
+        </FormControl> */}
         {/* <FormControl>
           <Button
             variant="contained"

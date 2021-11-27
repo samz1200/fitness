@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getGymOptions } from "../../Service/api";
 import BottomButtons from "../Home/bottomButtons/bottomButton";
 import Header from "../Home/Header/Header";
 import "./Payment.css";
 
 const Payment = () => {
+  const [arr, setArr] = useState();
+  useEffect(() => {
+    loadGymDetails();
+  }, []);
+
+  const loadGymDetails = async () => {
+    const { data } = await getGymOptions();
+    console.log(data)
+    setArr(data);
+  };
+
   return (
     <div>
       <Header></Header>
@@ -20,6 +32,14 @@ const Payment = () => {
                   Select Up to 4 <br /> National Gyms or Studio Memberships
                 </h3>
                 <div className="container" style={{ textAlign: "left" }}>
+                  {/* {
+                    arr?.map((item, index) => (
+                      <div class="row text" key={item.id}>
+                        <div class="col">{item.value}</div>
+                        <div class="col">{item}</div>
+                      </div>
+                    ))
+                  } */}
                   <div class="row text">
                     <div class="col">Gold’s Gym</div>
                     <div class="col">24 Hour Fitness</div>

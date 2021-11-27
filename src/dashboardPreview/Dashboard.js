@@ -13,6 +13,8 @@ import AllUsers from './Components/AllUsers';
 import ParticipatingGyms from './Components/ParticipatingGyms';
 import GymOptions from './Components/Gymoptions';
 import Sendmails from './Components/sendMails';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const AdminDashboard = () => {
     const [show1, setShow1] = useState(true)
@@ -104,7 +106,12 @@ const AdminDashboard = () => {
             </ProSidebar>
             <div className="sideBarComponentsDiv">
                 <div className="topBarDiv">
-                    <div style={{ display: "flex", justifyContent: "flex-end", cursor: "pointer" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", cursor: "pointer" }}>
+                        <Link to='/' style={{ textDecoration: "none !important" }}>
+                            <Button variant="contained" color="primary">
+                                {"<  "} Backtohome
+                            </Button>
+                        </Link>
                         <img src={profileimg} style={{ width: "2.5rem", borderRadius: "50%" }} />
                     </div>
                 </div>

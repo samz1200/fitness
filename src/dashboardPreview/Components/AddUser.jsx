@@ -15,7 +15,6 @@ const initialValue = {
 const AddUser = () => {
     const [user, setUser] = useState(initialValue);
     const { name, username, email, phone } = user;
-    
     let history = useHistory();
 
     const onValueChange = (e) => {
