@@ -77,7 +77,7 @@ const AllUsers = () => {
       </FormGroup>
       <Table >
         <TableHead>
-          <TableRow className={classes.thead}>
+          <TableRow >
             <TableCell>Id</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Referral</TableCell>
