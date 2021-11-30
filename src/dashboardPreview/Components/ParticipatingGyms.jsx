@@ -4,11 +4,13 @@ import {
   FormGroup,
   FormControl,
   InputLabel,
-  TextareaAutosize,
+  
   Input,
   Button,
+
   Typography,
 } from "@material-ui/core";
+import FileBase64 from "react-file-base64";
 import { getGyms, gymParticipate } from "../../Service/api";
 import { useHistory } from "react-router";
 
@@ -24,6 +26,7 @@ const ParticipatingGyms = () => {
   const [gym, setGym] = useState(initialValue);
   const { gymImg, gymName, gymAddress, gymDescription } = gym;
   const history = useHistory();
+  
   // console.log(gym);
 
   useEffect(() => {
@@ -72,14 +75,10 @@ const ParticipatingGyms = () => {
         />
       </FormControl>
       <FormControl>
-        <InputLabel htmlFor="my-input">Gym Image</InputLabel>
-        <Input
-        //   onChange={(e) => setGym({ ...gym, gymImg: e.target.files[0] })}
-          type="file"
-          name="lName"
-          //   value={lName}
-          id="my-input"
-          aria-describedby="my-helper-text"
+        <label style={{marginBottom: "1rem"}}>Gym Image</label>
+        <FileBase64
+          multiple={false}
+          onDone={({ base64 }) => setGym({ ...gym, gymImg: base64 })}
         />
       </FormControl>
       <FormControl>

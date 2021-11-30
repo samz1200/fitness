@@ -5,7 +5,7 @@ import {
   InputLabel,
   Input,
   Button,
-  Typography,
+   Typography,
 } from "@material-ui/core";
 import { getUsers, editUser } from "../../Service/api";
 
@@ -21,7 +21,7 @@ const initialValue = {
 const EditUser = ({ id, setShowEditForm }) => {
   const [user, setUser] = useState(initialValue);
   const { fName, lName, referral, email, pNumber } = user;
-  
+ 
 
   useEffect(() => {
     loadUserDetails();

@@ -19,7 +19,7 @@ const GymOptions = () => {
     price: "",
   });
   const [check, setCheck] = useState(false);
-
+  
 
   const submitOptions = async () => {
     console.log(option);
@@ -91,13 +91,13 @@ const GymOptions = () => {
         </FormControl>
         <FormControl>
           <div style={{ display: check ? "block" : "none" }}>
-            <p className={classes.pTag}>Option added</p>
+            <p >Option added</p>
           </div>
         </FormControl>
         {/* <FormControl>
           <div>
             {option?.map((item, index) => (
-              <p  key={index}>
+              <p className={classes.pTag} key={index}>
                 {item}
               </p>
             ))}

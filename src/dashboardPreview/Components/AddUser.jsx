@@ -1,5 +1,5 @@
 import react, { useState } from 'react';
-import { FormGroup, FormControl, InputLabel, Input, Button, Typography } from '@material-ui/core';
+import { FormGroup, FormControl, InputLabel, Input, Button,  Typography } from '@material-ui/core';
 import { addUser } from '../../Service/api';
 import { useHistory } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const AddUser = () => {
     }
 
     return (
-        <FormGroup >
+        <FormGroup>
             <Typography variant="h4">Add User</Typography>
             <FormControl>
                 <InputLabel htmlFor="my-input">Name</InputLabel>

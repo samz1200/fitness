@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { getUsers, sendallMailAddress } from "../../Service/api";
-import { FormGroup, Button,  Typography } from "@material-ui/core";
+import { FormGroup, Button, makeStyles, Typography } from "@material-ui/core";
 
-
+const useStyles = makeStyles({
+  container: {
+    width: "50%",
+    margin: "5% 0 0 25%",
+    textAlign: "center",
+    "& > *": {
+      marginTop: 20,
+    },
+  },
+});
 
 const Sendmails = () => {
   const [check, setCheck] = useState(false);
+  const classes = useStyles();
   const [users, setUsers] = useState();
   useEffect(() => {
     getAllUsers();
@@ -31,7 +41,7 @@ const Sendmails = () => {
   };
 
   return (
-    <FormGroup >
+    <FormGroup className={classes.container}>
       <Typography variant="h4">Send Mail to all Users</Typography>
       <Button variant="contained" color="primary" onClick={sendAllMails}>
         Send
