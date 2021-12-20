@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // const usersUrl = 'http://localhost:3003/users';
-const usersUrl = 'http://localhost:8080/users';
-const gymsUrl = 'http://localhost:8080/gymaddeds';
-const gymOptionsUrl = 'http://localhost:8080/gyms';
-const sendMailUrl = 'http://localhost:8080/sendmails';
+const usersUrl = 'https://beckend.vonelijahfitness.com/users';
+const gymsUrl = 'https://beckend.vonelijahfitness.com/gymaddeds';
+const gymOptionsUrl = 'https://beckend.vonelijahfitness.com/gyms';
+const sendMailUrl = 'https://beckend.vonelijahfitness.com/sendmails';
 
 export const getUsers = async (id) => {
     id = id || '';
